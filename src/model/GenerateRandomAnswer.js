@@ -1,4 +1,4 @@
-const { UTIL } = require("./Constant");
+const { UTIL } = require("../Constant");
 const { Random } = require(UTIL);
 
 const GenerateRandomAnswer = {

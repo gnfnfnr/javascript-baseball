@@ -1,8 +1,8 @@
 const mockFn = jest.fn();
 const MissionUtils = require("@woowacourse/mission-utils");
-const AnswerMaker = require("../src/AnswerMaker");
+const AnswerMaker = require("../src/model/AnswerMaker");
 const { ANSWER } = require("../src/Constant");
-const { generate } = require("../src/GenerateRandomAnswer");
+const { generate } = require("../src/model/GenerateRandomAnswer");
 
 describe("jest.fn 공부하기", () => {
   // mockReturnValue의 초기 값이 undefined이라는 것을 확인할 수 있다
