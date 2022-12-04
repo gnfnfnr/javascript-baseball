@@ -1,4 +1,4 @@
-const { UTIL } = require("../Constant");
+const { UTIL, ASk_MESSAGE } = require("../Constant");
 const { Console } = require(UTIL);
 
 /**
@@ -11,7 +11,7 @@ const InputView = {
   },
 
   readBaseballNumbers(callback) {
-    this.readLine("숫자를 입력해주세요", callback);
+    this.readLine(ASk_MESSAGE.INPUT_NUMBER, callback);
   },
 };
 
