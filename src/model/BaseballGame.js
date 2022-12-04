@@ -20,6 +20,14 @@ class BaseballGame {
         : ballCounts;
     }, 0);
   }
+
+  #countStrikes(userInputNum) {
+    return this.#randomAnswer.reduce((strikeCounts, number, numberIndex) => {
+      return userInputNum.indexOf(number) === numberIndex
+        ? strikeCounts + 1
+        : strikeCounts;
+    }, 0);
+  }
 }
 
 module.exports = BaseballGame;
