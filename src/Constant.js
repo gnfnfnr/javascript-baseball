@@ -1,14 +1,23 @@
 const UTIL = "@woowacourse/mission-utils";
 
-const ANSWER = {
-  SIZE: 3,
+const ENDING_COMMAND = {
+  RESTART: "1",
+  END: "2",
+  CHECK_VALIDATION: {
+    VALIDATORNAME: ["isValueCorrect"],
+    VALIDATIONINFOMATION: {
+      checkList: ["1", "2"],
+    },
+  },
 };
 
 const ASk_MESSAGE = {
-  INPUT_NUMBER: "숫자를 입력해주세요",
+  INPUT_NUMBER: "숫자를 입력해주세요 : ",
+  INPUT_COMMAND: "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.",
 };
 
-const QUESTION = {
+const RANDOM_ANSWER = {
+  SIZE: 3,
   CHECK_VALIDATION: {
     VALIDATORNAME: [
       "isNumber",
@@ -56,10 +65,10 @@ const CELEBRATION_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임
 
 module.exports = {
   UTIL,
-  ANSWER,
-  QUESTION,
+  RANDOM_ANSWER,
   ERROR_MESSAGE,
   ASk_MESSAGE,
   HINT_MESSAGE,
   CELEBRATION_MESSAGE,
+  ENDING_COMMAND,
 };

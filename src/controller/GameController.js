@@ -1,4 +1,4 @@
-const { QUESTION } = require("../Constant");
+const { RANDOM_ANSWER, ENDING_COMMAND } = require("../Constant");
 const BaseballGame = require("../model/BaseballGame");
 const Validation = require("../model/Validation");
 const InputView = require("../view/InputView");
@@ -9,7 +9,7 @@ class GameController {
 
   inputUserNumber() {
     InputView.readBaseballNumbers((userNmbers) => {
-      new Validation(QUESTION.CHECK_VALIDATION, userNmbers).showResult();
+      new Validation(RANDOM_ANSWER.CHECK_VALIDATION, userNmbers).showResult();
       this.printUserHint(userNmbers);
     });
   }
@@ -22,10 +22,14 @@ class GameController {
 
   printUserCelebration() {
     OutputView.printCelebration();
-    this.inputUserEnding();
+    this.inputUserEndingCommand();
   }
 
-  inputUserEnding() {}
+  inputUserEndingCommand() {
+    InputView.readBaseballEnding((userCommand) => {
+      new Validation(ENDING_COMMAND.CHECK_VALIDATION, userCommand).showResult();
+    });
+  }
 }
 
 module.exports = GameController;

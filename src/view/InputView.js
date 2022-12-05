@@ -13,6 +13,10 @@ const InputView = {
   readBaseballNumbers(callback) {
     this.readLine(ASk_MESSAGE.INPUT_NUMBER, callback);
   },
+
+  readBaseballEnding(callback) {
+    this.readLine(ASk_MESSAGE.INPUT_COMMAND, callback);
+  },
 };
 
 module.exports = InputView;

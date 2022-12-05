@@ -1,4 +1,4 @@
-const { ANSWER } = require("../Constant");
+const { RANDOM_ANSWER } = require("../Constant");
 const AnswerMaker = require("./AnswerMaker");
 const { generate } = require("./GenerateRandomAnswer");
 
@@ -10,7 +10,7 @@ class BaseballGame {
   }
 
   #makeRandomAnswer() {
-    this.#randomAnswer = AnswerMaker.makeAnswer(ANSWER.SIZE, generate);
+    this.#randomAnswer = AnswerMaker.makeAnswer(RANDOM_ANSWER.SIZE, generate);
   }
 
   #countBalls(numbers) {

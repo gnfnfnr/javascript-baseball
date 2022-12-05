@@ -1,4 +1,4 @@
-const { QUESTION } = require("../src/Constant");
+const { RANDOM_ANSWER } = require("../src/Constant");
 const BaseballGame = require("../src/model/BaseballGame");
 const Validation = require("../src/model/Validation");
 const MissionUtils = require("@woowacourse/mission-utils");
@@ -8,7 +8,7 @@ describe("유효성 검사하기", () => {
     const input = ["1e3", "123.0", "+00", "1234", "120", "-12", "344"];
     input.forEach((value) => {
       expect(() => {
-        new Validation(QUESTION.CHECK_VALIDATION, value).showResult();
+        new Validation(RANDOM_ANSWER.CHECK_VALIDATION, value).showResult();
       }).toThrow();
     });
   });
