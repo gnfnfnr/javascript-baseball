@@ -40,6 +40,7 @@ class GameController {
 
   endGame(userCommand) {
     if (userCommand === ENDING_COMMAND.RESTART) new GameController();
+    if (userCommand === ENDING_COMMAND.END) Console.close();
   }
 }
 
