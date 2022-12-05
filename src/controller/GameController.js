@@ -3,9 +3,15 @@ const BaseballGame = require("../model/BaseballGame");
 const Validation = require("../model/Validation");
 const InputView = require("../view/InputView");
 const OutputView = require("../view/OutputView");
+const { UTIL } = require("../Constant");
+const { Console } = require(UTIL);
 
 class GameController {
   #baseballGame = new BaseballGame();
+
+  constructor() {
+    this.inputUserNumber();
+  }
 
   inputUserNumber() {
     InputView.readBaseballNumbers((userNmbers) => {
@@ -28,7 +34,12 @@ class GameController {
   inputUserEndingCommand() {
     InputView.readBaseballEnding((userCommand) => {
       new Validation(ENDING_COMMAND.CHECK_VALIDATION, userCommand).showResult();
+      this.endGame(userCommand);
     });
+  }
+
+  endGame(userCommand) {
+    if (userCommand === ENDING_COMMAND.RESTART) new GameController();
   }
 }
 

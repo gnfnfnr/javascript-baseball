@@ -1,7 +1,7 @@
 const mockFn = jest.fn();
 const MissionUtils = require("@woowacourse/mission-utils");
 const AnswerMaker = require("../src/model/AnswerMaker");
-const { ANSWER } = require("../src/Constant");
+const { RANDOM_ANSWER } = require("../src/Constant");
 const { generate } = require("../src/model/GenerateRandomAnswer");
 
 describe("jest.fn 공부하기", () => {
@@ -59,7 +59,7 @@ describe.only("랜덤 정답 코드 확인하기", () => {
       }, MissionUtils.Random.pickNumberInRange);
     };
     mockRandoms([1, 2, 3]);
-    const random = AnswerMaker.makeAnswer(ANSWER.SIZE, generate);
+    const random = AnswerMaker.makeAnswer(RANDOM_ANSWER.SIZE, generate);
     expect(random).toEqual([1, 2, 3]);
   });
 });
