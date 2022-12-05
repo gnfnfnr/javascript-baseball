@@ -39,4 +39,24 @@ const ERROR_MESSAGE = {
   },
 };
 
-module.exports = { UTIL, ANSWER, QUESTION, ERROR_MESSAGE, ASk_MESSAGE };
+const Hint_Message = {
+  NOTHING: "낫싱",
+  BALL(ballCount) {
+    return `${ballCount}볼`;
+  },
+  STRIKE(strikeCount) {
+    return `${strikeCount}스트라이크`;
+  },
+  BALLANDSTRIKE(ballCount, strikeCount) {
+    return `${ballCount}볼 ${strikeCount}스트라이크`;
+  },
+};
+
+module.exports = {
+  UTIL,
+  ANSWER,
+  QUESTION,
+  ERROR_MESSAGE,
+  ASk_MESSAGE,
+  Hint_Message,
+};
