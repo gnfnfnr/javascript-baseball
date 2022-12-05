@@ -10,35 +10,37 @@ class GameController {
   #baseballGame = new BaseballGame();
 
   constructor() {
-    this.inputUserNumber();
+    this.#inputUserNumber();
   }
 
-  inputUserNumber() {
+  #inputUserNumber() {
     InputView.readBaseballNumbers((userNmbers) => {
       new Validation(RANDOM_ANSWER.CHECK_VALIDATION, userNmbers).showResult();
-      this.printUserHint(userNmbers);
+      this.#printUserHint(userNmbers);
     });
   }
 
-  printUserHint(userNumbers) {
+  #printUserHint(userNumbers) {
     const { ball, strike } = this.#baseballGame.showResult(userNumbers);
     OutputView.printHint(ball, strike);
-    return strike === 3 ? this.printUserCelebration() : this.inputUserNumber();
+    return strike === 3
+      ? this.#printUserCelebration()
+      : this.#inputUserNumber();
   }
 
-  printUserCelebration() {
+  #printUserCelebration() {
     OutputView.printCelebration();
-    this.inputUserEndingCommand();
+    this.#inputUserEndingCommand();
   }
 
-  inputUserEndingCommand() {
+  #inputUserEndingCommand() {
     InputView.readBaseballEnding((userCommand) => {
       new Validation(ENDING_COMMAND.CHECK_VALIDATION, userCommand).showResult();
-      this.endGame(userCommand);
+      this.#endGame(userCommand);
     });
   }
 
-  endGame(userCommand) {
+  #endGame(userCommand) {
     if (userCommand === ENDING_COMMAND.RESTART) new GameController();
     if (userCommand === ENDING_COMMAND.END) Console.close();
   }
