@@ -62,6 +62,7 @@ const HINT_MESSAGE = {
 };
 
 const CELEBRATION_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+const START_MESSAGE = "숫자 야구 게임을 시작합니다.";
 
 module.exports = {
   UTIL,
@@ -71,4 +72,5 @@ module.exports = {
   HINT_MESSAGE,
   CELEBRATION_MESSAGE,
   ENDING_COMMAND,
+  START_MESSAGE,
 };

@@ -1,4 +1,9 @@
-const { UTIL, HINT_MESSAGE, CELEBRATION_MESSAGE } = require("../Constant");
+const {
+  UTIL,
+  HINT_MESSAGE,
+  CELEBRATION_MESSAGE,
+  START_MESSAGE,
+} = require("../Constant");
 const { Console } = require(UTIL);
 
 /**
@@ -7,7 +12,7 @@ const { Console } = require(UTIL);
 
 const OutputView = {
   printStart() {
-    Console.print("숫자 야구 게임을 시작합니다.");
+    Console.print(START_MESSAGE);
   },
   printHint(ball, strike) {
     if (!strike && !ball) Console.print(HINT_MESSAGE.NOTHING);
