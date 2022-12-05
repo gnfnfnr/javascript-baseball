@@ -1,4 +1,4 @@
-const { UTIL, ASk_MESSAGE, Hint_Message } = require("../Constant");
+const { UTIL, HINT_MESSAGE, CELEBRATION_MESSAGE } = require("../Constant");
 const { Console } = require(UTIL);
 
 /**
@@ -7,10 +7,14 @@ const { Console } = require(UTIL);
 
 const OutputView = {
   printHint(ball, strike) {
-    if (!strike && !ball) Console.print(Hint_Message.NOTHING);
-    if (!strike && ball) Console.print(Hint_Message.BALL(ball));
-    if (!ball && strike) Console.print(Hint_Message.BALLANDSTRIKE(strike));
-    if (ball && strike) Console.print(Hint_Message.BALLANDSTRIKE(ball, strike));
+    if (!strike && !ball) Console.print(HINT_MESSAGE.NOTHING);
+    if (!strike && ball) Console.print(HINT_MESSAGE.BALL(ball));
+    if (!ball && strike) Console.print(HINT_MESSAGE.STRIKE(strike));
+    if (ball && strike) Console.print(HINT_MESSAGE.BALLANDSTRIKE(ball, strike));
+  },
+
+  printCelebration() {
+    Console.print(CELEBRATION_MESSAGE);
   },
 };
 

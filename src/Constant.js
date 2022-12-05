@@ -39,7 +39,7 @@ const ERROR_MESSAGE = {
   },
 };
 
-const Hint_Message = {
+const HINT_MESSAGE = {
   NOTHING: "낫싱",
   BALL(ballCount) {
     return `${ballCount}볼`;
@@ -52,11 +52,14 @@ const Hint_Message = {
   },
 };
 
+const CELEBRATION_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+
 module.exports = {
   UTIL,
   ANSWER,
   QUESTION,
   ERROR_MESSAGE,
   ASk_MESSAGE,
-  Hint_Message,
+  HINT_MESSAGE,
+  CELEBRATION_MESSAGE,
 };

@@ -16,9 +16,16 @@ class GameController {
 
   printUserHint(userNumbers) {
     const { ball, strike } = this.#baseballGame.showResult(userNumbers);
-    OutputView.printHint({ ball, strike });
-    return strike === 3 ? "" : this.inputUserNumber();
+    OutputView.printHint(ball, strike);
+    return strike === 3 ? this.printUserCelebration() : this.inputUserNumber();
   }
+
+  printUserCelebration() {
+    OutputView.printCelebration();
+    this.inputUserEnding();
+  }
+
+  inputUserEnding() {}
 }
 
 module.exports = GameController;
