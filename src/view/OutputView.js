@@ -6,7 +6,7 @@ const { Console } = require(UTIL);
  */
 
 const OutputView = {
-  printHint({ ball, strike }) {
+  printHint(ball, strike) {
     if (!strike && !ball) Console.print(Hint_Message.NOTHING);
     if (!strike && ball) Console.print(Hint_Message.BALL(ball));
     if (!ball && strike) Console.print(Hint_Message.BALLANDSTRIKE(strike));

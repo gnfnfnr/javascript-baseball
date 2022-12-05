@@ -15,9 +15,9 @@ class GameController {
   }
 
   printUserHint(userNumbers) {
-    const count = this.#baseballGame.showResult(userNumbers);
-    OutputView.printHint(count);
-    // return strike === 3 ? this.gameEnd() : this.userInputProcess();
+    const { ball, strike } = this.#baseballGame.showResult(userNumbers);
+    OutputView.printHint({ ball, strike });
+    return strike === 3 ? "" : this.inputUserNumber();
   }
 }
 
